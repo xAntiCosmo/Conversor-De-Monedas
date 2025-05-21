@@ -1,0 +1,32 @@
+[
+  {
+    "Base": "ARS",
+    "Target": "USD",
+    "Conversion": "0.00087566"
+  },
+  {
+    "Base": "USD",
+    "Target": "BRL",
+    "Conversion": "5.6494"
+  },
+  {
+    "Base": "BRL",
+    "Target": "USD",
+    "Conversion": "0.1770"
+  },
+  {
+    "Base": "USD",
+    "Target": "COP",
+    "Conversion": "4157.6502"
+  },
+  {
+    "Base": "USD",
+    "Target": "BRL",
+    "Conversion": "5.6494"
+  },
+  {
+    "Base": "COP",
+    "Target": "USD",
+    "Conversion": "0.00024052"
+  }
+]

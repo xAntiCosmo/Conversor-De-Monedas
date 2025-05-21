@@ -1,13 +1,17 @@
 package com.aluracursos.conversor.principal;
+import java.io.FileWriter;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import com.aluracursos.conversor.modelos.Conversor;
 import com.aluracursos.conversor.modelos.Moneda;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -15,7 +19,8 @@ public class App {
         Integer opcion = 0;
         String Moneda1 = null;
         String Moneda2 = null;
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        List<Moneda> historial = new ArrayList<>();
 
         while (opcion != 7) {
             System.out.println("\tConversor de monedas\n");
@@ -78,8 +83,11 @@ public class App {
             Conversor miConversor = gson.fromJson(json, Conversor.class);
             Moneda miMoneda = new Moneda(miConversor);
             System.out.println(miMoneda);
+            historial.add(miMoneda);
         }
-
+        FileWriter historialTxt = new FileWriter("HistorialDeCambios.json");
+        historialTxt.write(gson.toJson(historial));
+        historialTxt.close();
         System.out.println("Finalizando....");
     }
 }
