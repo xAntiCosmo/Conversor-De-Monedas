@@ -30,6 +30,10 @@ public class App {
             System.out.print("Elige tu opción: ");
             opcion = Lectura.nextInt();
 
+            if (opcion == 7) {
+                break;
+            }
+
             switch (opcion) {
                 case 1:
                     Moneda1 = "USD";
@@ -55,9 +59,6 @@ public class App {
                     Moneda1 = "COP";
                     Moneda2 = "USD";
                     break;
-                case 7:
-                    break;
-            
                 default:
                     System.out.println("\nIngresa un valor válido!\n");
                     break;
